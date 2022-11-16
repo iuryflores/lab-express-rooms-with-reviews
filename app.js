@@ -7,6 +7,8 @@ import cors from "cors";
 
 import './config/db.config.js'
 
+import authRoutes from './routes/auth.routes.js'
+
 const app = express();
 
 
@@ -20,6 +22,7 @@ app.use(logger("dev"));
 // Utilizar o json body das requisições
 app.use(express.json());
 
+app.use('/', authRoutes)
 
 //listen
 app.listen(process.env.PORT, () => {
