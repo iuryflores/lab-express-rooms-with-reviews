@@ -8,7 +8,7 @@ import cors from "cors";
 import './config/db.config.js'
 
 import authRoutes from './routes/auth.routes.js'
-
+import roomsRoutes from "./routes/rooms.routes.js";
 const app = express();
 
 
@@ -23,6 +23,7 @@ app.use(logger("dev"));
 app.use(express.json());
 
 app.use('/', authRoutes)
+app.use('/', roomsRoutes)
 
 //listen
 app.listen(process.env.PORT, () => {
